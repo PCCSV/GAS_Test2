@@ -1,5 +1,5 @@
 const API_URL =
-  "AKfycbz3PIz8A410fUDS_VsyXs6wxvbb-zJq1QlGotciZ7hfD5ISsjqOpcET1UN6KDKFwzB8mA";
+  "https://script.google.com/macros/s/AKfycbz3PIz8A410fUDS_VsyXs6wxvbb-zJq1QlGotciZ7hfD5ISsjqOpcET1UN6KDKFwzB8mA/exec";
 
 const form = document
   .getElementById("form");

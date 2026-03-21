@@ -1,0 +1,79 @@
+const API_URL =
+  "AKfycbz3PIz8A410fUDS_VsyXs6wxvbb-zJq1QlGotciZ7hfD5ISsjqOpcET1UN6KDKFwzB8mA";
+
+const form = document
+  .getElementById("form");
+
+form.addEventListener(
+  "submit",
+  async e => {
+
+  e.preventDefault();
+
+  const data = {
+
+    name:
+      name.value,
+
+    email:
+      email.value,
+
+    message:
+      message.value
+
+  };
+
+  if (navigator.onLine) {
+
+    await sendToServer(data);
+
+  } else {
+
+    await saveOffline(data);
+
+    status.textContent =
+      "Saved offline";
+
+  }
+
+});
+
+async function sendToServer(data) {
+
+  await fetch(API_URL, {
+
+    method: "POST",
+
+    body: JSON.stringify(data)
+
+  });
+
+  status.textContent =
+    "Saved to Google Sheets";
+
+}
+
+async function syncOffline() {
+
+  if (!navigator.onLine)
+    return;
+
+  const items =
+    await getAllOffline();
+
+  for (const item of items) {
+
+    await sendToServer(item);
+
+  }
+
+  await clearOffline();
+
+}
+
+window.addEventListener(
+  "online",
+  syncOffline
+);
+
+syncOffline();

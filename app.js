@@ -1,8 +1,16 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbz3PIz8A410fUDS_VsyXs6wxvbb-zJq1QlGotciZ7hfD5ISsjqOpcET1UN6KDKFwzB8mA/exec";
-
 const form =
   document.getElementById("form");
+
+const nameInput =
+  document.getElementById("name");
+
+const emailInput =
+  document.getElementById("email");
+
+const messageInput =
+  document.getElementById("message");
 
 form.addEventListener(
   "submit",
@@ -12,9 +20,14 @@ form.addEventListener(
 
   const data = {
 
-    name: name.value,
-    email: email.value,
-    message: message.value
+    name:
+      nameInput.value,
+
+    email:
+      emailInput.value,
+
+    message:
+      messageInput.value
 
   };
 
@@ -23,9 +36,7 @@ form.addEventListener(
     const ok =
       await sendToServer(data);
 
-    if (ok) {
-      form.reset();   // clear form
-    }
+    if (ok) form.reset();
 
   } else {
 
@@ -34,7 +45,7 @@ form.addEventListener(
     status.textContent =
       "Saved offline";
 
-    form.reset();     // clear form locally
+    form.reset();
 
   }
 

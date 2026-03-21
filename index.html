@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="manifest" href="manifest.json">
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Contact form (offline capable)</h2>
+
+<form id="form">
+
+<input placeholder="Name" id="name" required>
+
+<input placeholder="Email" id="email" required>
+
+<textarea placeholder="Message" id="message"></textarea>
+
+<button>Save</button>
+
+</form>
+
+<p id="status"></p>
+
+<script src="db.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>

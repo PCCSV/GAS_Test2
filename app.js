@@ -12,6 +12,17 @@ const emailInput =
 const messageInput =
   document.getElementById("message");
 
+if (
+  !localStorage.getItem(
+    "token"
+  )
+) {
+
+  location.href =
+    "login.html";
+
+};
+
 form.addEventListener(
   "submit",
   async e => {

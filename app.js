@@ -1,5 +1,6 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbyiYMpTeWzE4uWT4Gs3HaXqWklYnZeDxg0y6mBLLFG5WQdTx7NfqTQnHK83bdUFTZMU2g/exec";
+  "https://script.google.com/macros/s/AKfycbyojooi1CDM_rW0-zVCS21pnCuA6tN-7jtQYDoZqRDQx9kl7CfLXhAjeO3R3vZMkWhfig/exec";
+
 
 const form =
   document.getElementById("form");
@@ -22,7 +23,7 @@ if (
   location.href =
     "login.html";
 
-};
+}
 
 form.addEventListener(
   "submit",

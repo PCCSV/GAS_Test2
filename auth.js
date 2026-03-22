@@ -1,5 +1,5 @@
 const API_URL =
-  "PASTE_APPS_SCRIPT_URL";
+  "https://script.google.com/macros/s/AKfycbyojooi1CDM_rW0-zVCS21pnCuA6tN-7jtQYDoZqRDQx9kl7CfLXhAjeO3R3vZMkWhfig/exec";
 
 const loginForm =
   document
